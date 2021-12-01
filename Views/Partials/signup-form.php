@@ -28,7 +28,7 @@
 						
 						<div class="fxt-footer">
 							<div class="fxt-transformY-50 fxt-transition-delay-9">
-								<p>Don't have an account?<a href="/auth/signup" class="switcher-text2 inline-text">Register</a></p>
+							<p>I have already Account?<a href="/auth/login" class="switcher-text2 inline-text">Login Now</a></p>
 							</div>
 						</div>
 					</div>
