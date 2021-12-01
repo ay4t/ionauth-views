@@ -32,6 +32,11 @@ php spark db:seed IonAuth\Database\Seeds\IonAuthSeeder
 ```
 3. install ay4t\ionauth-views view
 This plugins use Username as Identifier. You must change default ionAuth Identifier form "email" to "username"
+use this command if you want releale version
+```
+composer require ay4t/ionauth-views
+```
+or you can use this command for install from dev-main github repository
 ```
 composer config repositories.IonauthView vcs git@github.com:ay4t/ionauth-views.git
 composer require ay4t/ionauth-views
