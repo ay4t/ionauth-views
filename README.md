@@ -56,4 +56,4 @@ $routes->group('auth', ['namespace' => 'IonauthView\Controllers'], function ($ro
 }); 
 ```
 
-#BOOMS now let's open http://<domain>/auth/login
+#BOOMS now let's open http://`<domain>`/auth/login
