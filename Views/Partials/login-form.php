@@ -2,7 +2,7 @@
                     <div class="fxt-content">
 						<div class="fxt-header">
 							<a href="" class="fxt-logo"><img src="/auth-assets/img/logo-7.png" alt="Logo"></a>
-							<p>Login into your pages account <?php echo getenv('app.company.name'); ?></p>
+							<p>Login into your pages account </p>
 						</div>
 						<div class="fxt-form">
 							<form method="POST" action="/auth/login" class="" data-remote>

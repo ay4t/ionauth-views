@@ -46,6 +46,8 @@ class Auth extends Controller {
 
         /** create init Asset CSS and JS */
         $this->createInitAssets();
+
+        $this->data['title']    = $this->config->createTitle(null);
     }
 
     /**
@@ -53,7 +55,8 @@ class Auth extends Controller {
      **/
     public function signin()
     {   
-        $this->data['container'] = view('IonauthView\Partials\login-form', $this->data);
+        $this->data['title']        = $this->config->createTitle('Authentication');
+        $this->data['container']    = view('IonauthView\Partials\login-form', $this->data);
         return view('IonauthView\Layouts', $this->data);
     }
 
@@ -62,6 +65,7 @@ class Auth extends Controller {
      **/
     public function signup()
     {
+        $this->data['title']        = $this->config->createTitle('Create New Account');
         $this->data['signup_field'] = $this->config->registerField();
         $this->data['container'] = view('IonauthView\Partials\signup-form', $this->data);
         return view('IonauthView\Layouts', $this->data);
@@ -72,6 +76,7 @@ class Auth extends Controller {
      **/
     public function forgotPassword()
     {
+        $this->data['title']        = $this->config->createTitle('Forgot a Password');
         $this->data['container'] = view('IonauthView\Partials\forgot-password-form', $this->data);
         return view('IonauthView\Layouts', $this->data);
     }
@@ -95,6 +100,7 @@ class Auth extends Controller {
             throw new \RuntimeException('Invalid Forgotten Password Code or is was expired time', 404);
         }
 
+        $this->data['title']        = $this->config->createTitle('Create a New Password');
         $this->data['forgotten_password_code']  = $result->forgotten_password_code;
         $this->data['container'] = view('IonauthView\Partials\reset-password-form', $this->data);
         return view('IonauthView\Layouts', $this->data);

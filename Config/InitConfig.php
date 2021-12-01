@@ -22,10 +22,24 @@ namespace IonauthView\Config;
 
 class InitConfig
 {
+    /**
+     * redirect address declaration when after login 
+     **/
     public $redirect_after_login     = 'dashboard';
 
+    /**
+     * redirect address declaration when after register 
+     **/
     public $redirect_after_register  = 'auth/login';
+    
+    /**
+     * declaration for company name 
+     * */
+    public $company_name = 'INDIEGA';
 
+    /**
+     * declare register fields
+     */
     protected $register_field;
 
     /**
@@ -72,5 +86,23 @@ class InitConfig
             ],
         
         ];
+    }
+
+    /**
+     * Create title for view
+     *
+     * @param Type $var Description
+     * @return type
+     * @throws conditon
+     **/
+    public function createTitle($title = null)
+    {
+        if ( $title == null ) {
+            return $this->company_name;
+        }
+
+        $suffix = ' - ' . $this->company_name;
+        return $title . $suffix;
+
     }
 }
