@@ -3,14 +3,14 @@ namespace IonauthView\Database\Migrations;
 
 /*
  * File: 20181211100537_install_ion_auth.php
- * Project: Migrations                                                         *
+ * Project: Migrations
  * Created Date: We Dec 2021
  * Author: Ayatulloh Ahad R
  * Email: ayatulloh@indiega.net
  * Phone: 085791555506
  * -----
- * Last Modified: Fri Dec 03 2021                                              *
- * Modified By: Ayatulloh Ahad R                                               *
+ * Last Modified: Fri Dec 03 2021
+ * Modified By: Ayatulloh Ahad R
  * -----
  * Copyright (c) 2021 Indiega Network
  * -----
@@ -105,6 +105,7 @@ class Migration_Install_ion_auth extends \CodeIgniter\Database\Migration
 			'username' => [
 				'type'       => 'VARCHAR',
 				'constraint' => '100',
+				'unique'     => true,
 			],
 			'password' => [
 				'type'       => 'VARCHAR',
@@ -113,7 +114,6 @@ class Migration_Install_ion_auth extends \CodeIgniter\Database\Migration
 			'email' => [
 				'type'       => 'VARCHAR',
 				'constraint' => '254',
-				'unique'     => true,
 			],
 			'activation_selector' => [
 				'type'       => 'VARCHAR',
