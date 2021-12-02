@@ -3,14 +3,14 @@ namespace IonauthView\Database\Migrations;
 
 /*
  * File: 20181211100537_install_ion_auth.php
- * Project: Migrations
+ * Project: Migrations                                                         *
  * Created Date: We Dec 2021
  * Author: Ayatulloh Ahad R
  * Email: ayatulloh@indiega.net
  * Phone: 085791555506
  * -----
- * Last Modified: Wed Dec 01 2021
- * Modified By: Ayatulloh Ahad R
+ * Last Modified: Fri Dec 03 2021                                              *
+ * Modified By: Ayatulloh Ahad R                                               *
  * -----
  * Copyright (c) 2021 Indiega Network
  * -----
@@ -197,6 +197,11 @@ class Migration_Install_ion_auth extends \CodeIgniter\Database\Migration
 				'constraint' => '100',
 				'null'       => true,
 			],
+			
+			/** create timestamp field */
+			'created_at datetime default current_timestamp',
+            'updated_at datetime default current_timestamp on update current_timestamp', 
+            'deleted_at datetime default null', 
 		]);
 		$this->forge->addKey('id', true);
 		$this->forge->createTable($this->tables['users'], false);
