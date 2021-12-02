@@ -25,16 +25,12 @@ composer config repositories.ionAuth vcs git@github.com:benedmunds/CodeIgniter-I
 composer require benedmunds/CodeIgniter-Ion-Auth:4.x-dev
 ```
 
-then migrate database and seed database data
-```
-php spark migrate -n IonAuth
-php spark db:seed IonAuth\Database\Seeds\IonAuthSeeder
-```
-3. install ay4t\ionauth-views view
-This plugins use Username as Identifier. You must change default ionAuth Identifier form "email" to "username"
+3. install ay4t\ionauth-views
+
+This plugins make automatically use Username as Identifier, But You must try or recheck your configuration to change default ionAuth Identifier form "email" to "username"
 use this command if you want releale version
 ```
-composer require ay4t/ionauth-views
+composer require ay4t/ionauth-views:dev-main
 ```
 or you can use this command for install from dev-main github repository
 ```
@@ -42,7 +38,13 @@ composer config repositories.IonauthView vcs git@github.com:ay4t/ionauth-views.g
 composer require ay4t/ionauth-views
 ```
 
-4. add to Config/Routes.php
+4. then migrate database and seed database data
+```
+php spark migrate -n IonauthView
+php spark db:seed IonauthView\Database\Seeds\IonAuthSeeder
+```
+
+`5. (OPTIONAL) You can add this code to Config/Routes.php`
 ```sh
 /*
  * --------------------------------------------------------------------
